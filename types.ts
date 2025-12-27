@@ -5,6 +5,7 @@ export interface Project {
   description: string;
   tech: string[];
   image: string;
+  images?: string[]; // Support for multiple gallery images
   link: string;
   featured: boolean;
   features?: string[]; // New field for detailed modal

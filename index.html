@@ -27,11 +27,22 @@
             animation: {
               'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
               'float': 'float 6s ease-in-out infinite',
+              'scrolldown': 'scrolldown 2s infinite',
             },
             keyframes: {
               float: {
                 '0%, 100%': { transform: 'translateY(0)' },
                 '50%': { transform: 'translateY(-20px)' },
+              },
+              scrolldown: {
+                '0%': { transform: 'translateY(0)', opacity: '0' },
+                '40%': { opacity: '1' },
+                '80%': { transform: 'translateY(10px)', opacity: '0' },
+                '100%': { opacity: '0' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
               }
             }
           }
@@ -60,6 +71,95 @@
       }
       ::-webkit-scrollbar-thumb:hover {
         background: #00f0ff;
+      }
+
+      /* --- GLITCH EFFECT (TEXT) --- */
+      .glitch-wrapper {
+        position: relative;
+        display: inline-block;
+      }
+      .glitch-text {
+        position: relative;
+      }
+      .glitch-text::before,
+      .glitch-text::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #050505; /* Matches body bg */
+      }
+      .glitch-text::before {
+        left: 2px;
+        text-shadow: -1px 0 #00f0ff;
+        clip: rect(24px, 550px, 90px, 0);
+        animation: glitch-anim-2 3s infinite linear alternate-reverse;
+      }
+      .glitch-text::after {
+        left: -2px;
+        text-shadow: -1px 0 #7000df;
+        clip: rect(85px, 550px, 140px, 0);
+        animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
+      }
+
+      /* --- GLITCH EFFECT (IMAGE HOVER) --- */
+      .glitch-img-container {
+        position: relative;
+        /* Removed overflow:hidden to let glitch spill out slightly if needed, though strictly it helps contain */
+        overflow: hidden; 
+      }
+      .glitch-img-container::before,
+      .glitch-img-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        pointer-events: none;
+        opacity: 0;
+        mix-blend-mode: hard-light;
+        transition: opacity 0.3s;
+        /* CRITICAL FIX: Z-index must be higher than the img (which is z-20) */
+        z-index: 30;
+      }
+      /* Cyan shift */
+      .glitch-img-container:hover::before {
+        background-image: url('https://github.com/ketve76/KBfoliopro/blob/main/profile.jpg?raw=true'); 
+        background-size: cover;
+        opacity: 0.8; /* Increased opacity */
+        animation: glitch-anim-1 0.4s infinite linear alternate-reverse;
+        transform: translate(-5px, 0);
+        filter: drop-shadow(5px 0 0 #00f0ff);
+      }
+      /* Purple shift */
+      .glitch-img-container:hover::after {
+        background-image: url('https://github.com/ketve76/KBfoliopro/blob/main/profile.jpg?raw=true');
+        background-size: cover;
+        opacity: 0.8; /* Increased opacity */
+        animation: glitch-anim-2 0.4s infinite linear alternate-reverse;
+        transform: translate(5px, 0);
+        filter: drop-shadow(-5px 0 0 #7000df);
+      }
+
+      @keyframes glitch-anim-1 {
+        0% { clip-path: inset(20% 0 80% 0); }
+        20% { clip-path: inset(60% 0 10% 0); }
+        40% { clip-path: inset(10% 0 50% 0); }
+        60% { clip-path: inset(80% 0 5% 0); }
+        80% { clip-path: inset(30% 0 40% 0); }
+        100% { clip-path: inset(50% 0 30% 0); }
+      }
+      @keyframes glitch-anim-2 {
+        0% { clip-path: inset(10% 0 60% 0); }
+        20% { clip-path: inset(30% 0 20% 0); }
+        40% { clip-path: inset(70% 0 10% 0); }
+        60% { clip-path: inset(20% 0 50% 0); }
+        80% { clip-path: inset(60% 0 10% 0); }
+        100% { clip-path: inset(40% 0 30% 0); }
       }
     </style>
   <script type="importmap">
