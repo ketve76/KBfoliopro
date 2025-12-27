@@ -76,7 +76,7 @@ const Hero: React.FC = () => {
             </a>
             
             <div className="flex gap-2 ml-2">
-               <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="p-3 border border-white/20 rounded-lg hover:border-cyber-primary/50 hover:text-cyber-primary transition-colors hover:bg-white/5">
+               <a href="https://www.linkedin.com/in/kevin-brunez-434121263/" target="_blank" rel="noreferrer" className="p-3 border border-white/20 rounded-lg hover:border-cyber-primary/50 hover:text-cyber-primary transition-colors hover:bg-white/5">
                  <Linkedin className="w-5 h-5" />
                </a>
                <a href="https://github.com" target="_blank" rel="noreferrer" className="p-3 border border-white/20 rounded-lg hover:border-cyber-primary/50 hover:text-cyber-primary transition-colors hover:bg-white/5">

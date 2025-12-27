@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageSquare, Send, X, Bot, Sparkles, Loader2, Lock } from 'lucide-react';
+import { Send, X, Bot, Sparkles, Loader2, Lock, AlertTriangle } from 'lucide-react';
 import { sendMessageToGemini } from '../services/geminiService';
 import { ChatMessage } from '../types';
 
@@ -13,25 +13,64 @@ const AIChat: React.FC = () => {
   const [messageCount, setMessageCount] = useState(0);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Security: Limit number of messages per session to prevent API abuse
-  const MAX_MESSAGES_PER_SESSION = 10;
+  // SECURITY CONFIGURATION
+  const MAX_DAILY_MESSAGES = 10;
+  const STORAGE_KEY = 'kevin_portfolio_chat_limit';
+  const RESET_PERIOD = 24 * 60 * 60 * 1000; // 24 Hours in milliseconds
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Load limit from LocalStorage on mount
+  useEffect(() => {
+    const checkLimit = () => {
+        const storedData = localStorage.getItem(STORAGE_KEY);
+        if (storedData) {
+            const { count, firstMsgTimestamp } = JSON.parse(storedData);
+            const now = Date.now();
+
+            // If the time window (24h) has passed, reset the counter
+            if (now - firstMsgTimestamp > RESET_PERIOD) {
+                localStorage.removeItem(STORAGE_KEY);
+                setMessageCount(0);
+            } else {
+                setMessageCount(count);
+            }
+        }
+    };
+    checkLimit();
+  }, [isOpen]); // Re-check when opening chat
+
   useEffect(() => {
     scrollToBottom();
   }, [messages, isOpen]);
 
+  const updateUsageCount = () => {
+      const now = Date.now();
+      const storedData = localStorage.getItem(STORAGE_KEY);
+      let newCount = 1;
+      let timestamp = now;
+
+      if (storedData) {
+          const data = JSON.parse(storedData);
+          newCount = data.count + 1;
+          timestamp = data.firstMsgTimestamp; // Keep original start time
+      }
+
+      const payload = { count: newCount, firstMsgTimestamp: timestamp };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+      setMessageCount(newCount);
+  };
+
   const handleSend = async () => {
     if (!inputText.trim() || isLoading) return;
 
-    // Check usage limit
-    if (messageCount >= MAX_MESSAGES_PER_SESSION) {
+    // Strict Check before sending
+    if (messageCount >= MAX_DAILY_MESSAGES) {
         const limitMsg: ChatMessage = { 
             role: 'model', 
-            text: "⚠️ Limite de questions atteinte pour cette session. Pour des échanges approfondis, merci de contacter Kevin directement via le formulaire !", 
+            text: "⛔ Limite journalière atteinte (Anti-Spam). Revenez demain ou contactez Kevin directement via le formulaire pour discuter !", 
             timestamp: new Date() 
         };
         setMessages(prev => [...prev, limitMsg]);
@@ -44,11 +83,13 @@ const AIChat: React.FC = () => {
     setInputText('');
     setIsLoading(true);
 
+    // Update counter immediately to prevent race conditions or quick reload hacks
+    updateUsageCount();
+
     try {
         const replyText = await sendMessageToGemini(inputText);
         const botMsg: ChatMessage = { role: 'model', text: replyText, timestamp: new Date() };
         setMessages(prev => [...prev, botMsg]);
-        setMessageCount(prev => prev + 1); // Increment counter
     } catch (e) {
         setMessages(prev => [...prev, { role: 'model', text: "Erreur de connexion au cerveau numérique.", timestamp: new Date() }]);
     } finally {
@@ -60,13 +101,15 @@ const AIChat: React.FC = () => {
     if (e.key === 'Enter') handleSend();
   };
 
+  const isLimitReached = messageCount >= MAX_DAILY_MESSAGES;
+
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       {/* Trigger Button */}
       {!isOpen && (
         <button 
           onClick={() => setIsOpen(true)}
-          className="group flex items-center gap-2 bg-cyber-primary text-black px-5 py-3 rounded-full font-bold shadow-[0_0_20px_rgba(0,240,255,0.4)] hover:scale-105 transition-all duration-300"
+          className="group flex items-center gap-2 bg-cyber-primary text-black px-5 py-3 rounded-full font-bold shadow-[0_0_20px_rgba(0,240,255,0.4)] hover:scale-105 transition-all duration-300 relative"
         >
           <Bot className="w-6 h-6" />
           <span>Ask my AI</span>
@@ -80,17 +123,18 @@ const AIChat: React.FC = () => {
           {/* Header */}
           <div className="bg-gradient-to-r from-[#111] to-[#0a0a0a] p-4 flex justify-between items-center border-b border-white/5">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-cyber-secondary/20 flex items-center justify-center text-cyber-secondary">
-                <Sparkles size={16} />
+              <div className={`w-8 h-8 rounded-full flex items-center justify-center ${isLimitReached ? 'bg-red-500/20 text-red-500' : 'bg-cyber-secondary/20 text-cyber-secondary'}`}>
+                {isLimitReached ? <AlertTriangle size={16} /> : <Sparkles size={16} />}
               </div>
               <div>
                 <h3 className="text-white font-bold text-sm">Assistant IA de Kevin</h3>
                 <div className="flex items-center gap-2">
-                    <span className="text-xs text-green-500 flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> Online
+                    <span className={`text-xs flex items-center gap-1 ${isLimitReached ? 'text-red-500' : 'text-green-500'}`}>
+                        <span className={`w-1.5 h-1.5 rounded-full ${isLimitReached ? 'bg-red-500' : 'bg-green-500 animate-pulse'}`}></span> 
+                        {isLimitReached ? 'Limit Reached' : 'Online'}
                     </span>
-                    <span className="text-[10px] text-gray-600">
-                        {messageCount}/{MAX_MESSAGES_PER_SESSION}
+                    <span className="text-[10px] text-gray-600 font-mono border border-white/10 px-1 rounded">
+                        {messageCount}/{MAX_DAILY_MESSAGES} (24h)
                     </span>
                 </div>
               </div>
@@ -132,20 +176,21 @@ const AIChat: React.FC = () => {
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 onKeyDown={handleKeyPress}
-                disabled={messageCount >= MAX_MESSAGES_PER_SESSION}
-                placeholder={messageCount >= MAX_MESSAGES_PER_SESSION ? "Session limit reached" : "Ask about Crypto, AI, or Projects..."}
+                disabled={isLimitReached}
+                placeholder={isLimitReached ? "Quota journalier atteint" : "Posez une question..."}
                 className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-cyber-primary/50 placeholder-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
               />
               <button 
                 onClick={handleSend}
-                disabled={isLoading || !inputText.trim() || messageCount >= MAX_MESSAGES_PER_SESSION}
-                className="p-2 bg-cyber-primary text-black rounded-xl hover:bg-cyan-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={isLoading || !inputText.trim() || isLimitReached}
+                className={`p-2 rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${isLimitReached ? 'bg-red-500/20 text-red-500' : 'bg-cyber-primary text-black hover:bg-cyan-400'}`}
               >
-                {messageCount >= MAX_MESSAGES_PER_SESSION ? <Lock size={18} /> : <Send size={18} />}
+                {isLimitReached ? <Lock size={18} /> : <Send size={18} />}
               </button>
             </div>
-            <div className="mt-2 text-center">
-              <span className="text-[10px] text-gray-600">Powered by Gemini Flash • Eco-Mode Enabled</span>
+            <div className="mt-2 text-center flex justify-between px-1">
+              <span className="text-[10px] text-gray-600">Powered by Gemini Flash</span>
+              {isLimitReached && <span className="text-[10px] text-red-500 font-bold">Reset: 24h</span>}
             </div>
           </div>
         </div>

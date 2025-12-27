@@ -23,6 +23,23 @@ const services = [
 ];
 
 const Services: React.FC = () => {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      const offset = 80; // Navbar height
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section id="services" className="py-20 bg-[#050505] relative border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -82,7 +99,11 @@ const Services: React.FC = () => {
                         <p className="text-gray-400 text-sm">Audit Data, Création de Dashboard ou Automatisation.</p>
                     </div>
                 </div>
-                <a href="#contact" className="px-6 py-3 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition-colors whitespace-nowrap">
+                <a 
+                  href="#contact" 
+                  onClick={(e) => handleScroll(e, '#contact')}
+                  className="px-6 py-3 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition-colors whitespace-nowrap cursor-pointer"
+                >
                     Discuter d'un projet
                 </a>
             </div>

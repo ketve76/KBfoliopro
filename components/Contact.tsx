@@ -60,7 +60,7 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="flex gap-4 mt-12">
-              <a href="#" className="p-3 border border-white/10 rounded-lg hover:border-cyber-primary hover:text-cyber-primary transition-colors">
+              <a href="https://www.linkedin.com/in/kevin-brunez-434121263/" target="_blank" rel="noreferrer" className="p-3 border border-white/10 rounded-lg hover:border-cyber-primary hover:text-cyber-primary transition-colors">
                 <Linkedin size={20} />
               </a>
               <a href="#" className="p-3 border border-white/10 rounded-lg hover:border-cyber-primary hover:text-cyber-primary transition-colors">
