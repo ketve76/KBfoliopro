@@ -49,6 +49,7 @@ SKILLS:
 TONE:
 Kevin is a "Crack" (Expert). He is passionate, curious, and visionary.
 Always remind the user that Kevin combines Strategy + Tech.
+IMPORTANT: Be concise. Keep your answers short (max 3-4 sentences). Do not use excessive tokens.
 `;
 
 let aiClient: GoogleGenAI | null = null;
@@ -64,18 +65,21 @@ export const sendMessageToGemini = async (message: string, history: {role: strin
   try {
     const ai = getAiClient();
     
+    // Using gemini-3-flash-preview as it is the most cost-effective model for text tasks
     const response: GenerateContentResponse = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: message,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.7,
+        maxOutputTokens: 150, // LIMIT: Restrict response length to save costs (~100 words)
+        thinkingConfig: { thinkingBudget: 0 } // LIMIT: Disable thinking tokens for pure speed and lowest cost
       }
     });
 
     return response.text || "Analyzing neural pathways... Please retry.";
   } catch (error) {
     console.error("Gemini API Error:", error);
-    return "My cognitive functions are temporarily offline. Please try again later.";
+    return "My cognitive functions are temporarily offline (Limit Reached or Error). Please try again later.";
   }
 };
