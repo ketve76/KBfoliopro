@@ -19,10 +19,6 @@ const Hero: React.FC = () => {
     }
   };
 
-  // Google Drive Direct Link ID
-  const driveImageId = "18bCkJwc-eYhSk6Rn0Yv0Vetcr59Q2Qe5";
-  const driveImageUrl = `https://drive.google.com/uc?export=view&id=${driveImageId}&t=${new Date().getTime()}`;
-
   return (
     <section id="overview" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Background Elements */}
@@ -124,11 +120,10 @@ const Hero: React.FC = () => {
                 {/* Image Container */}
                 <div className="absolute inset-6 rounded-full overflow-hidden border-4 border-white/10 bg-black shadow-[0_0_50px_rgba(0,240,255,0.3)] group cursor-pointer">
                     <img 
-                        src={driveImageUrl}
-                        referrerPolicy="no-referrer"
+                        src="https://github.com/ketve76/KBfoliopro/blob/main/profile.jpg?raw=true"
                         onError={(e) => {
-                            // Fallback to stylized Initials if Drive link fails (Permissions/CORS)
-                            console.warn("Google Drive Image failed to load. Using fallback.");
+                            // Fallback to stylized Initials if local image is missing
+                            console.warn("Profile image not found. Using fallback.");
                             e.currentTarget.src = "https://ui-avatars.com/api/?name=Kevin+Brunez&background=000&color=00f0ff&size=400&font-size=0.33&bold=true&length=2";
                         }}
                         alt="Kevin Brunez" 
