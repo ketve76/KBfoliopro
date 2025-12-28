@@ -9,14 +9,14 @@ const myProjects: Project[] = [
     category: "AI & Trading Tool",
     description: "Outil complet d'analyse de marché global et crypto développé en React TypeScript. L'IA analyse les métriques pour proposer des trades sur contrats perpétuels et spot.",
     tech: ["React", "TypeScript", "Python (AI)", "Machine Learning"],
-    // Main thumbnail
-    image: "globalanalysis.png", 
-    // Gallery images based on your filenames
+    // Main thumbnail - Using raw GitHub URL
+    image: "https://github.com/ketve76/KBfoliopro/blob/main/globalanalysis.PNG?raw=true", 
+    // Gallery images - Using raw GitHub URLs
     images: [
-        "globalanalysis.png",
-        "TokkenAnalysis1.png",
-        "TokkenAnalysis2.png",
-        "TokkenAnalysis3.png"
+        "https://github.com/ketve76/KBfoliopro/blob/main/globalanalysis.PNG?raw=true",
+        "https://github.com/ketve76/KBfoliopro/blob/main/TokkenAnalysis1.PNG?raw=true",
+        "https://github.com/ketve76/KBfoliopro/blob/main/TokkenAnalysis2.PNG?raw=true",
+        "https://github.com/ketve76/KBfoliopro/blob/main/TokkenAnalysis3.PNG?raw=true"
     ],
     link: "#",
     featured: true,
@@ -157,35 +157,34 @@ const Projects: React.FC = () => {
                 className="absolute inset-0 bg-black/90 backdrop-blur-md" 
                 onClick={closeProject}
             ></div>
-            <div className="relative bg-[#0a0a0a] border border-cyber-primary/30 rounded-2xl max-w-5xl w-full shadow-[0_0_100px_rgba(112,0,223,0.2)] animate-in fade-in zoom-in duration-300 overflow-hidden flex flex-col md:flex-row max-h-[95vh] md:max-h-[85vh]">
+            <div className="relative bg-[#0a0a0a] border border-cyber-primary/30 rounded-2xl max-w-6xl w-full shadow-[0_0_100px_rgba(112,0,223,0.2)] animate-in fade-in zoom-in duration-300 overflow-hidden flex flex-col md:flex-row max-h-[95vh] md:max-h-[90vh]">
                 
                 <button 
                     onClick={closeProject}
-                    className="absolute top-4 right-4 text-white/50 hover:text-white bg-black/50 p-2 rounded-full z-30 transition-colors"
+                    className="absolute top-4 right-4 text-white/70 hover:text-white bg-black/60 p-2 rounded-full z-50 transition-colors border border-white/10"
                 >
                     <X size={24} />
                 </button>
 
                 {/* Left Side: Image Gallery */}
-                <div className="w-full md:w-3/5 bg-black flex flex-col relative h-[40vh] md:h-auto">
+                <div className="w-full md:w-3/5 bg-black/50 flex flex-col relative h-[45vh] md:h-auto border-r border-white/5">
                     {/* Main Active Image */}
-                    <div className="flex-1 relative overflow-hidden flex items-center justify-center bg-[#050505]">
+                    <div className="flex-1 relative overflow-hidden flex items-center justify-center bg-black/80 p-4">
                         <img 
                             src={activeImage || selectedProject.image} 
                             alt={selectedProject.title} 
-                            className="w-full h-full object-contain md:object-cover"
+                            className="w-full h-full object-contain"
                         />
-                         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-50"></div>
                     </div>
 
                     {/* Thumbnail Strip (Only if multiple images exist) */}
                     {selectedProject.images && selectedProject.images.length > 0 && (
-                        <div className="h-20 md:h-24 bg-[#0a0a0a] border-t border-white/10 flex items-center gap-2 px-4 overflow-x-auto scrollbar-hide">
+                        <div className="h-20 md:h-24 bg-[#050505] border-t border-white/10 flex items-center gap-3 px-4 overflow-x-auto scrollbar-hide py-2">
                             {selectedProject.images.map((img, idx) => (
                                 <button
                                     key={idx}
                                     onClick={() => setActiveImage(img)}
-                                    className={`relative w-16 h-12 md:w-24 md:h-16 shrink-0 rounded-lg overflow-hidden border-2 transition-all ${activeImage === img ? 'border-cyber-primary opacity-100' : 'border-transparent opacity-50 hover:opacity-100'}`}
+                                    className={`relative w-20 h-14 md:w-28 md:h-16 shrink-0 rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${activeImage === img ? 'border-cyber-primary opacity-100 ring-2 ring-cyber-primary/20' : 'border-white/10 opacity-60 hover:opacity-100 hover:border-white/30'}`}
                                 >
                                     <img src={img} alt={`Screenshot ${idx}`} className="w-full h-full object-cover" />
                                 </button>

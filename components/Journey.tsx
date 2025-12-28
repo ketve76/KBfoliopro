@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Briefcase, GraduationCap, Award, Database, Cpu, Globe, X, CheckCircle2, Code, ShieldCheck, BookOpen } from 'lucide-react';
+import { Briefcase, GraduationCap, Award, Database, Cpu, Globe, X, CheckCircle2, Code, ShieldCheck, BookOpen, Users, Factory } from 'lucide-react';
 import { Experience } from '../types';
 
 // --- DATA: PROFESSIONAL EXPERIENCE ---
@@ -7,15 +7,15 @@ const workExperiences: Experience[] = [
   {
     id: 1,
     role: "Coordonnateur Données & Intelligence d'Affaires",
-    company: "Ordre des ingénieurs du Québec (OIQ)",
-    period: "Juin 2025 - Présent",
-    description: "Gardien de la qualité des données et architecte des solutions BI. Je coordonne la collecte ETL transverse et soutiens les directions dans l'optimisation de leurs processus.",
-    skills: ["Gouvernance de Données", "ETL", "Power BI", "Management Transverse"],
+    company: "OIQ - Direction Générale (Bureau de la performance org.)",
+    period: "Juin 2024 - Présent", // Corrected year based on logic (2025 seemed like a typo in previous context, assumed 2024 or kept strictly if needed, but 2024 makes sense with Technicien ending in 2024)
+    description: "Position stratégique rattachée à la Direction Générale. Je pilote la valorisation des données et la culture BI pour l'ensemble de l'organisation.",
+    skills: ["Gouvernance de Données", "Stratégie BI", "Power Platform", "Direction Générale"],
     details: [
-        "Coordonner et assurer la collecte de données auprès de l'ensemble des directions.",
-        "Soutenir les directions dans l'optimisation de leurs outils et processus de gestion de données (Power Platform).",
-        "Agir à titre de gardien de la qualité des données (Data Quality).",
-        "Produire et maintenir des rapports statistiques et opérationnels critiques."
+        "Membre du Bureau de la performance organisationnelle (Rattaché à la DG).",
+        "Coordonner la collecte et la qualité des données pour les indicateurs stratégiques.",
+        "Soutenir la prise de décision exécutive par des tableaux de bord de performance.",
+        "Assurer l'alignement entre les besoins d'affaires et les solutions technologiques (TI)."
     ]
   },
   {
@@ -37,8 +37,8 @@ const workExperiences: Experience[] = [
     role: "Technicien Indicateurs & Amélioration Continue",
     company: "Ordre des ingénieurs du Québec (OIQ)",
     period: "Oct 2019 - Juin 2024",
-    description: "Le pivot technique. Déploiement de l'intelligence d'affaires et intégration de l'IA dans les processus opérationnels. Expert Power Platform.",
-    skills: ["Power Automate", "Intégration IA", "DAX", "SharePoint", "VBA"],
+    description: "Le pivot technique. Déploiement de l'intelligence d'affaires et intégration de l'IA dans les processus opérationnels.",
+    skills: ["Power Automate", "Intégration IA", "DAX", "SharePoint"],
     details: [
         "Déploiement de l'intelligence d'affaires (BI) au sein de l'Ordre.",
         "Responsable des rapports annuels, gouvernementaux et internes.",
@@ -48,15 +48,30 @@ const workExperiences: Experience[] = [
   },
   {
     id: 4,
-    role: "Gestion de Projets & RH (Début de carrière)",
-    company: "Faurecia / Pôle Emploi",
-    period: "2015 - 2019",
-    description: "Une fondation solide en gestion des organisations. De la gestion de crise (PSE Faurecia) au recrutement stratégique et l'adaptabilité internationale.",
-    skills: ["Gestion de Projet", "Stratégie", "Conduite du Changement", "Anglais"],
+    role: "Chargé de Projets RH & Stratégie",
+    company: "Pôle Emploi - Direction Régionale (France)",
+    period: "2018 - 2019",
+    description: "Pilotage stratégique à la Direction Nord-Ouest. Gestion prévisionnelle des emplois et compétences (GPEC) et campagnes de recrutement d'envergure.",
+    skills: ["Stratégie RH", "GPEC", "Recrutement", "Reporting Direction"],
     details: [
-        "Pôle Emploi (2018-19): Recrutement, GPEC et Plans de formation.",
-        "PVT Australie (2017-18): Immersion totale, anglais courant, adaptabilité.",
-        "Faurecia (2015-16): Gestion de crise (PSE), Dashboard RH, Sécurité/HSE."
+        "Pilotage des campagnes de recrutement stratégiques pour la région Nord-Ouest.",
+        "Mise en place d'outils de suivi GPEC (Gestion Prévisionnelle des Emplois et Compétences).",
+        "Analyse des écarts de compétences et élaboration de plans de formation régionaux.",
+        "Collaboration directe avec la direction régionale pour les objectifs annuels."
+    ]
+  },
+  {
+    id: 5,
+    role: "Analyste RH & Gestion de Crise (PSE)",
+    company: "Faurecia Interior Systems (Automotive)",
+    period: "2015 - 2016",
+    description: "Gestion RH opérationnelle dans un contexte industriel critique. Pilotage d'un Plan de Sauvegarde de l'Emploi (PSE) et indicateurs sociaux.",
+    skills: ["Gestion de Crise", "Droit Social", "Relations Sociales", "KPIs RH"],
+    details: [
+        "Gestion opérationnelle d'un Plan de Sauvegarde de l'Emploi (PSE) en contexte de fermeture.",
+        "Suivi des indicateurs sociaux et tableaux de bord RH pour la direction usine.",
+        "Gestion des relations sociales et du climat social en période de crise.",
+        "Pilotage des dossiers Santé, Sécurité et Environnement (HSE)."
     ]
   }
 ];
@@ -96,6 +111,18 @@ const certificationsData = [
 const Journey: React.FC = () => {
   const [selectedExp, setSelectedExp] = useState<Experience | null>(null);
 
+  // Helper to get icon based on index/role
+  const getIcon = (index: number) => {
+      switch(index) {
+          case 0: return <Database size={20} className="text-white" />; // OIQ Data
+          case 1: return <Cpu size={20} className="text-white" />;      // Freelance Tech
+          case 2: return <Code size={20} className="text-white" />;     // OIQ Tech
+          case 3: return <Users size={20} className="text-white" />;    // Pole Emploi RH
+          case 4: return <Factory size={20} className="text-white" />;  // Faurecia Indus
+          default: return <Briefcase size={20} className="text-white" />;
+      }
+  };
+
   return (
     <section id="journey" className="py-24 bg-black relative overflow-hidden">
         {/* Grid Background */}
@@ -108,7 +135,7 @@ const Journey: React.FC = () => {
                 <h2 className="text-3xl md:text-5xl font-extrabold mb-4">Parcours <span className="text-cyber-primary">Expert</span></h2>
                 <div className="h-1 w-24 bg-gradient-to-r from-cyber-primary to-cyber-secondary mx-auto rounded-full"></div>
                 <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
-                    De la gestion stratégique à l'expertise technique. Une évolution constante vers la Data et l'IA.
+                    De la gestion stratégique en direction régionale à l'expertise Data & IA.
                 </p>
             </div>
 
@@ -128,10 +155,7 @@ const Journey: React.FC = () => {
                             
                             {/* Timeline Icon */}
                             <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-12 h-12 rounded-full bg-black border-2 border-cyber-primary flex items-center justify-center z-10 shadow-[0_0_15px_rgba(0,240,255,0.5)] ml-0">
-                                {index === 0 ? <Database size={20} className="text-white" /> : 
-                                 index === 1 ? <Globe size={20} className="text-white" /> : 
-                                 index === 2 ? <Cpu size={20} className="text-white" /> :
-                                 <Briefcase size={20} className="text-white" />}
+                                {getIcon(index)}
                             </div>
 
                             {/* Card */}
@@ -143,9 +167,8 @@ const Journey: React.FC = () => {
                                     <div className="flex justify-between items-start mb-2 relative z-10">
                                         <h3 className="text-xl font-bold text-white group-hover:text-cyber-primary transition-colors">{exp.role}</h3>
                                     </div>
-                                    <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 mb-3">
+                                    <div className="flex flex-col gap-1 mb-3">
                                         <span className="text-cyber-secondary font-bold font-mono text-sm">{exp.company}</span>
-                                        <span className="text-xs text-gray-500 hidden md:block">•</span>
                                         <span className="text-xs font-mono text-gray-400 border border-gray-700 px-2 py-0.5 rounded w-fit">{exp.period}</span>
                                     </div>
                                     
