@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, Activity, ShoppingBag, PieChart, X, Layers, Sparkles, Image as ImageIcon } from 'lucide-react';
+import { ExternalLink, Github, Activity, ShoppingBag, PieChart, X, Layers, Sparkles, Image as ImageIcon, Lock, Construction } from 'lucide-react';
 import { Project } from '../types';
 
 const myProjects: Project[] = [
@@ -33,7 +33,8 @@ const myProjects: Project[] = [
     category: "Web & Community",
     description: "Plateforme communautaire de partage de bons plans type Dealabs. Système de vote et réputation.",
     tech: ["Next.js", "Firebase", "Tailwind", "Node.js"],
-    image: "https://picsum.photos/600/400?random=2",
+    image: "COMING_SOON", // Placeholder flag
+    images: [], 
     link: "#",
     featured: false,
     features: [
@@ -49,7 +50,8 @@ const myProjects: Project[] = [
     category: "Finance & AI",
     description: "Application ultime de tracking financier personnel. Stocks, Cash, Flux, Dépenses alimenté par l'IA.",
     tech: ["React Native", "FastAPI", "OpenAI API", "Plaid"],
-    image: "https://picsum.photos/600/400?random=3",
+    image: "COMING_SOON", // Placeholder flag
+    images: [],
     link: "#",
     featured: true,
     features: [
@@ -73,6 +75,36 @@ const Projects: React.FC = () => {
   const closeProject = () => {
       setSelectedProject(null);
       setActiveImage(null);
+  };
+
+  // Helper component for the "Coming Soon" visual to ensure consistency
+  const ProjectVisual = ({ image, title, isHovered = false }: { image: string, title: string, isHovered?: boolean }) => {
+      if (image === "COMING_SOON") {
+          return (
+            <div className={`w-full h-full bg-[#080808] flex flex-col items-center justify-center relative overflow-hidden transition-transform duration-700 ${isHovered ? 'scale-105' : 'scale-100'}`}>
+                {/* Tech Grid Background */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+                
+                {/* Central Icon */}
+                <div className="relative z-10 flex flex-col items-center gap-4 opacity-60">
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.5)] flex items-center justify-center">
+                        <Lock className="w-8 h-8 text-gray-500" />
+                    </div>
+                    <div className="flex flex-col items-center gap-1">
+                        <span className="font-mono text-sm font-bold text-gray-500 tracking-[0.2em] uppercase">Confidential</span>
+                        <span className="text-[10px] text-gray-700 font-mono">Screenshots Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+          );
+      }
+      return (
+        <img 
+          src={image} 
+          alt={title} 
+          className={`w-full h-full object-cover transform transition-transform duration-700 ${isHovered ? 'scale-110' : 'scale-100'}`}
+        />
+      );
   };
 
   return (
@@ -100,12 +132,10 @@ const Projects: React.FC = () => {
               
               {/* Image Overlay */}
               <div className="aspect-video overflow-hidden relative">
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors z-10"></div>
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors z-10 pointer-events-none"></div>
+                
+                <ProjectVisual image={project.image} title={project.title} isHovered={true} />
+
                 <div className="absolute top-4 right-4 z-20 bg-black/50 backdrop-blur rounded-full p-2 border border-white/10">
                     {project.id === 1 ? <Activity className="text-cyber-primary w-5 h-5" /> : 
                      project.id === 2 ? <ShoppingBag className="text-orange-500 w-5 h-5" /> :
@@ -169,12 +199,21 @@ const Projects: React.FC = () => {
                 {/* Left Side: Image Gallery */}
                 <div className="w-full md:w-3/5 bg-black/50 flex flex-col relative h-[45vh] md:h-auto border-r border-white/5">
                     {/* Main Active Image */}
-                    <div className="flex-1 relative overflow-hidden flex items-center justify-center bg-black/80 p-4">
-                        <img 
-                            src={activeImage || selectedProject.image} 
-                            alt={selectedProject.title} 
-                            className="w-full h-full object-contain"
-                        />
+                    <div className="flex-1 relative overflow-hidden flex items-center justify-center bg-black/80">
+                         {/* We reuse the visual logic but without hover scale effects for the static modal view */}
+                         <div className="w-full h-full p-0 md:p-4">
+                            {/* If it's a real image, we want the object-contain behavior for modal, 
+                                but if it's the "Coming Soon" block, we want it to fill properly */}
+                            {activeImage === "COMING_SOON" || selectedProject.image === "COMING_SOON" ? (
+                                <ProjectVisual image="COMING_SOON" title={selectedProject.title} />
+                            ) : (
+                                <img 
+                                    src={activeImage || selectedProject.image} 
+                                    alt={selectedProject.title} 
+                                    className="w-full h-full object-contain"
+                                />
+                            )}
+                         </div>
                     </div>
 
                     {/* Thumbnail Strip (Only if multiple images exist) */}
