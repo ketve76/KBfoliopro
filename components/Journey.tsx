@@ -8,7 +8,7 @@ const workExperiences: Experience[] = [
     id: 1,
     role: "Coordonnateur Données & Intelligence d'Affaires",
     company: "OIQ - Direction Générale (Bureau de la performance org.)",
-    period: "Juin 2024 - Présent", // Corrected year based on logic (2025 seemed like a typo in previous context, assumed 2024 or kept strictly if needed, but 2024 makes sense with Technicien ending in 2024)
+    period: "Juin 2025 - Présent",
     description: "Position stratégique rattachée à la Direction Générale. Je pilote la valorisation des données et la culture BI pour l'ensemble de l'organisation.",
     skills: ["Gouvernance de Données", "Stratégie BI", "Power Platform", "Direction Générale"],
     details: [
@@ -36,7 +36,7 @@ const workExperiences: Experience[] = [
     id: 3,
     role: "Technicien Indicateurs & Amélioration Continue",
     company: "Ordre des ingénieurs du Québec (OIQ)",
-    period: "Oct 2019 - Juin 2024",
+    period: "Oct 2019 - Juin 2025",
     description: "Le pivot technique. Déploiement de l'intelligence d'affaires et intégration de l'IA dans les processus opérationnels.",
     skills: ["Power Automate", "Intégration IA", "DAX", "SharePoint"],
     details: [
@@ -58,6 +58,20 @@ const workExperiences: Experience[] = [
         "Mise en place d'outils de suivi GPEC (Gestion Prévisionnelle des Emplois et Compétences).",
         "Analyse des écarts de compétences et élaboration de plans de formation régionaux.",
         "Collaboration directe avec la direction régionale pour les objectifs annuels."
+    ]
+  },
+  {
+    id: 6,
+    role: "Assistant Manager (Expérience Internationale)",
+    company: "Steve's - Nedlands (Perth, Australie)",
+    period: "2017",
+    description: "Année d'immersion totale en Australie. Progression rapide de Barman à Assistant Manager dans un établissement de prestige (Winestore).",
+    skills: ["Anglais Fluent", "Management Ops", "Adaptabilité", "Vente"],
+    details: [
+        "Immersion complète à Perth pour perfectionner l'anglais (Niveau Fluent atteint).",
+        "Promotion rapide : Début comme Barman, fini Assistant Manager.",
+        "Gestion opérationnelle au Steve's, un Winestore & Bar réputé.",
+        "Développement de l'adaptabilité interculturelle et du service client haut de gamme."
     ]
   },
   {
@@ -118,7 +132,8 @@ const Journey: React.FC = () => {
           case 1: return <Cpu size={20} className="text-white" />;      // Freelance Tech
           case 2: return <Code size={20} className="text-white" />;     // OIQ Tech
           case 3: return <Users size={20} className="text-white" />;    // Pole Emploi RH
-          case 4: return <Factory size={20} className="text-white" />;  // Faurecia Indus
+          case 4: return <Globe size={20} className="text-white" />;    // Australia (International)
+          case 5: return <Factory size={20} className="text-white" />;  // Faurecia Indus
           default: return <Briefcase size={20} className="text-white" />;
       }
   };
