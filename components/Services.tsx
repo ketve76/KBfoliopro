@@ -5,7 +5,7 @@ const services = [
   {
     icon: <BarChart3 className="w-8 h-8 text-cyber-primary" />,
     title: "Business Intelligence",
-    description: "Power BI Expert (PL-300). Transformation de données brutes en leviers décisionnels — tableaux de bord interactifs, modélisation DAX/SQL et storytelling auprès des directions.",
+    description: "Power BI Expert (certifié Microsoft via Coursera). Transformation de données brutes en leviers décisionnels — tableaux de bord interactifs, modélisation DAX/SQL et storytelling auprès des directions.",
     tags: ["Power BI", "DAX", "SQL", "ETL", "Data Viz"]
   },
   {

@@ -109,15 +109,15 @@ const educationData = [
 // --- DATA: CERTIFICATIONS ---
 const certificationsData = [
     {
-        title: "Certified React Developer",
-        issuer: "Meta / Advanced Frontend",
-        date: "Mai 2025",
+        title: "Meta React Developer Specialization",
+        issuer: "Meta · Coursera (6+ mois)",
+        date: "2025",
         icon: <Code className="text-blue-400" size={20} />
     },
     {
-        title: "Power BI Data Analyst Associate",
-        issuer: "Microsoft (PL-300)",
-        date: "Août 2024",
+        title: "Microsoft Power BI Data Analyst",
+        issuer: "Microsoft · Coursera (6+ mois)",
+        date: "2024",
         icon: <Database className="text-yellow-500" size={20} />
     }
 ];
@@ -254,7 +254,7 @@ const Journey: React.FC = () => {
                         <div className="p-5 rounded-xl border border-dashed border-white/20 bg-transparent flex items-center justify-center text-center">
                             <div>
                                 <BookOpen className="w-6 h-6 text-gray-500 mx-auto mb-2" />
-                                <p className="text-gray-500 text-sm">Apprentissage continu : AI Agents, Solidity Security...</p>
+                                <p className="text-gray-500 text-sm">Apprentissage continu : AI Agents, MCP custom, Tokenomics avancée...</p>
                             </div>
                         </div>
                     </div>

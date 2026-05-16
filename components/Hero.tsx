@@ -56,11 +56,11 @@ const Hero: React.FC = () => {
           <div className="space-y-6 text-gray-400 text-lg leading-relaxed border-l-2 border-cyber-primary/30 pl-6 backdrop-blur-sm bg-black/20 p-4 rounded-r-xl">
             <p>
               Coordonnateur Données (OIQ) le jour, builder autonome la nuit.
-              Je transforme les processus complexes en systèmes performants grâce à <strong>l'orchestration multi-LLM</strong> (Claude, Gemini + modèles locaux Gemma 4 / Qwen), la <strong>Data Intelligence</strong> (Power BI Expert PL-300) et la <strong>finance décentralisée</strong>.
+              Je transforme les processus complexes en systèmes performants grâce à <strong>l'orchestration multi-LLM</strong> (Claude, Gemini + modèles locaux Gemma 4 / Qwen), la <strong>Data Intelligence</strong> (Power BI Expert) et la <strong>finance décentralisée</strong>.
             </p>
 
             <p>
-              <strong>Profil hybride RH stratégique → Data → IA.</strong> Ancien analyste RH en gestion de crise (PSE Faurecia) et chargé de projets à la Direction Régionale de Pôle Emploi, je sais parler aux ingénieurs comme aux comités de direction. C'est ce pont entre tech et stratégie qui fait livrer des projets data au lieu de produire des dashboards qui finissent sur une étagère.
+              <strong>Profil hybride RH stratégique → Data → IA.</strong> Autodidacte technique depuis l'enfance — ma curiosité pour les systèmes informatiques précède largement le métier. Ancien analyste RH en gestion de crise (PSE Faurecia) et chargé de projets à la Direction Régionale de Pôle Emploi, je sais parler aux ingénieurs comme aux comités de direction. C'est ce pont entre tech et stratégie qui fait livrer des projets data au lieu de produire des dashboards qui finissent sur une étagère.
             </p>
 
             <p>
@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
                 <Blocks className="w-5 h-5" />
                 <span className="font-bold">Finance 3.0</span>
               </div>
-              <p className="text-xs text-gray-500">DeFi, Trading, Solidity</p>
+              <p className="text-xs text-gray-500">DeFi, Trading, Tokenomics</p>
             </div>
             <div className="text-center md:text-left hover:scale-105 transition-transform duration-300 cursor-default">
               <div className="flex items-center justify-center md:justify-start gap-2 mb-1 text-blue-500">
