@@ -9,14 +9,12 @@ const myProjects: Project[] = [
     category: "AI & Trading Tool",
     description: "Outil complet d'analyse de marché global et crypto développé en React TypeScript. L'IA analyse les métriques pour proposer des trades sur contrats perpétuels et spot.",
     tech: ["React", "TypeScript", "Python (AI)", "Machine Learning"],
-    // Main thumbnail - Using raw GitHub URL
-    image: "https://github.com/ketve76/KBfoliopro/blob/main/globalanalysis.PNG?raw=true", 
-    // Gallery images - Using raw GitHub URLs
+    image: "/globalanalysis.PNG",
     images: [
-        "https://github.com/ketve76/KBfoliopro/blob/main/globalanalysis.PNG?raw=true",
-        "https://github.com/ketve76/KBfoliopro/blob/main/TokkenAnalysis1.PNG?raw=true",
-        "https://github.com/ketve76/KBfoliopro/blob/main/TokkenAnalysis2.PNG?raw=true",
-        "https://github.com/ketve76/KBfoliopro/blob/main/TokkenAnalysis3.PNG?raw=true"
+        "/globalanalysis.PNG",
+        "/TokkenAnalysis1.PNG",
+        "/TokkenAnalysis2.PNG",
+        "/TokkenAnalysis3.PNG"
     ],
     link: "#",
     featured: true,

@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
     }
   };
 
-  const profileImgUrl = "https://github.com/ketve76/KBfoliopro/blob/main/profile.jpg?raw=true";
+  const profileImgUrl = "/profile.jpg";
 
   return (
     <section id="overview" className="relative min-h-screen flex items-center justify-center pt-20 pb-32 md:pb-0 overflow-hidden bg-black">
