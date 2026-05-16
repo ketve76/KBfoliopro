@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
             </p>
 
             <p>
-              <strong>Profil hybride RH stratégique → Data → IA.</strong> Autodidacte technique depuis l'enfance — ma curiosité pour les systèmes informatiques précède largement le métier. Ancien analyste RH en gestion de crise (PSE Faurecia) et chargé de projets à la Direction Régionale de Pôle Emploi, je sais parler aux ingénieurs comme aux comités de direction. C'est ce pont entre tech et stratégie qui fait livrer des projets data au lieu de produire des dashboards qui finissent sur une étagère.
+              <strong>Profil hybride RH → Data → IA.</strong> Autodidacte technique depuis l'enfance — ma curiosité pour les systèmes informatiques précède largement le métier. Ancien Généraliste RH chez Faurecia (incluant le pilotage d'un Plan de Sauvegarde de l'Emploi) puis Chargé de Développement Professionnel & Recrutement à la <strong>Direction RH Nord-Ouest de Pôle Emploi</strong>, je sais parler aux ingénieurs comme aux comités de direction. C'est ce pont entre tech et stratégie qui fait livrer des projets data au lieu de produire des dashboards qui finissent sur une étagère.
             </p>
 
             <p>
