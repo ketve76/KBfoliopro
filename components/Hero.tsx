@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
           
           <div className="space-y-6 text-gray-400 text-lg leading-relaxed border-l-2 border-cyber-primary/30 pl-6 backdrop-blur-sm bg-black/20 p-4 rounded-r-xl">
             <p>
-              Coordonnateur Données (OIQ) le jour, Architecte de solutions autonomes la nuit. 
+              Coordonnateur Données (OIQ) le jour, Développeur autonome la nuit. 
               Je transforme les processus complexes en systèmes performants grâce à <strong>l'IA</strong> (Agents, n8n), la <strong>Data Intelligence</strong> (Power BI Expert) et la <strong>Blockchain</strong>.
             </p>
             
@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
             </p>
 
             <p>
-               En <strong>veille technologique et économique obsessionnelle</strong>, je ne me contente pas de coder : j'analyse, j'anticipe et je conçois des outils (Trading Bots, Dashboard Financiers) qui ont un temps d'avance sur le marché.
+               En <strong>veille technologique et économique constante</strong>, je ne me contente pas de coder : j'analyse, j'anticipe et je conçois des outils (Trading Bots, Dashboard Financiers) qui ont un temps d'avance sur le marché.
             </p>
           </div>
 
@@ -77,6 +77,14 @@ const Hero: React.FC = () => {
               <span className="relative z-10 flex items-center gap-2">
                 Voir mes Solutions <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
+            </a>
+
+            <a 
+              href="#lab" 
+              onClick={(e) => handleScroll(e, '#lab')}
+              className="group px-6 py-3 border border-purple-500 text-purple-400 font-bold rounded-lg hover:bg-purple-500/10 transition-colors cursor-pointer flex items-center gap-2 shadow-[0_0_10px_rgba(168,85,247,0.1)] hover:shadow-[0_0_20px_rgba(168,85,247,0.3)]"
+            >
+              AI Lab <Bot className="w-4 h-4 group-hover:scale-110 transition-transform" />
             </a>
 
             <a 
