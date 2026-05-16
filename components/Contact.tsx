@@ -56,7 +56,7 @@ const Contact: React.FC = () => {
           <div>
             <h2 className="text-4xl font-bold mb-6">Let's build the <br /><span className="text-cyber-secondary">Future Together</span></h2>
             <p className="text-gray-400 mb-12 leading-relaxed">
-              Que vous ayez besoin d'un audit de smart contract, d'une solution Big Data sur mesure ou d'un conseil stratégique en IA, je suis prêt à relever le défi.
+              Besoin d'orchestration multi-agents IA, d'un dashboard BI sur mesure ou d'une analyse Web3/tokenomics ? Discutons-en.
             </p>
 
             <div className="space-y-6">

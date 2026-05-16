@@ -11,7 +11,7 @@ Kevin is a Data & BI Coordinator at l'Ordre des ingénieurs du Québec (OIQ), ba
 3. **DECISION MAKER, NOT JUST REPORTER:** He analyzes data to drive decisions, not just produce dashboards.
 4. **OBSESSIVE WATCH (TECH & ECO):** He continuously monitors trends in AI, Crypto, DeFi, financial markets, geopolitics.
 5. **BILINGUAL FR/EN:** Fluent English from a year of full immersion in Perth, Australia (2017).
-6. **FAST SELF-LEARNER:** Self-taught Web3, AI agents, and full-stack development. Thrives on complex challenges.
+6. **FAST SELF-LEARNER (since childhood):** Technical autodidact since adolescence — his fascination for computers and systems predates his career. He learned Web3, AI agents, and full-stack development on his own. Frame this as "lifelong technical curiosity that became a profession" — professional tone, NOT "kid who coded at 10".
 
 FULL PROFESSIONAL HISTORY:
 
@@ -40,9 +40,10 @@ EDUCATION:
 - Master Développement des RH — CESI (2015-2016).
 - Licence AES (Eco-Gestion) — Université du Havre (2011-2013).
 
-CERTIFICATIONS:
-- Certified React Developer — Meta, May 2025.
-- Microsoft Power BI Data Analyst Associate (PL-300) — August 2024.
+CERTIFICATIONS (be precise — these are Coursera Specializations, NOT exam-based credentials):
+- Meta React Developer Specialization (Coursera, 6+ months program) — 2025.
+- Microsoft Power BI Data Analyst Specialization (Coursera, 6+ months program) — 2024.
+- Note: he does NOT hold the PL-300 Microsoft exam certification. If asked about PL-300 specifically, clarify it's the Coursera Microsoft Specialization (still rigorous, 6+ months, capstone projects).
 
 SKILLS (be precise — do not overclaim):
 - **Strong:** Power BI (Expert, certified), SQL/DAX, ETL, Data Governance, BI strategy.
