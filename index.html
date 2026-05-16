@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | Data Analyst & AI Expert</title>
+    <meta name="description" content="Portfolio de Kevin Brunez — Data Analyst, Expert IA & Web3 basé à Montréal." />
+    <meta name="theme-color" content="#050505" />
+    <meta name="robots" content="index, follow" />
+    <title>Portfolio | Kevin Brunez · Data Analyst &amp; AI Expert</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Privacy-friendly font hosting (Bunny Fonts, GDPR-compliant drop-in for Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link href="https://fonts.bunny.net/css?family=inter:300,400,600,800|jetbrains-mono:400,700&display=swap" rel="stylesheet" />
     <script>
       tailwind.config = {
         theme: {
@@ -50,46 +53,20 @@
       }
     </script>
     <style>
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 80px; /* Navbar height offset for anchor links */
-      }
-      body {
-        background-color: #050505;
-        color: #ffffff;
-      }
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #0a0a0a;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #333;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #00f0ff;
-      }
+      html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+      body { background-color: #050505; color: #ffffff; }
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #0a0a0a; }
+      ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #00f0ff; }
 
-      /* --- GLITCH EFFECT (TEXT) --- */
-      .glitch-wrapper {
-        position: relative;
-        display: inline-block;
-      }
-      .glitch-text {
-        position: relative;
-      }
-      .glitch-text::before,
-      .glitch-text::after {
+      .glitch-wrapper { position: relative; display: inline-block; }
+      .glitch-text { position: relative; }
+      .glitch-text::before, .glitch-text::after {
         content: attr(data-text);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #050505; /* Matches body bg */
+        position: absolute; top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: #050505;
       }
       .glitch-text::before {
         left: 2px;
@@ -104,42 +81,26 @@
         animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
       }
 
-      /* --- GLITCH EFFECT (IMAGE HOVER) --- */
-      .glitch-img-container {
-        position: relative;
-        /* Removed overflow:hidden to let glitch spill out slightly if needed, though strictly it helps contain */
-        overflow: hidden; 
-      }
-      .glitch-img-container::before,
-      .glitch-img-container::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: inherit;
-        pointer-events: none;
-        opacity: 0;
-        mix-blend-mode: hard-light;
-        transition: opacity 0.3s;
-        /* CRITICAL FIX: Z-index must be higher than the img (which is z-20) */
+      .glitch-img-container { position: relative; overflow: hidden; }
+      .glitch-img-container::before, .glitch-img-container::after {
+        content: ''; position: absolute; top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: inherit; pointer-events: none; opacity: 0;
+        mix-blend-mode: hard-light; transition: opacity 0.3s;
         z-index: 30;
       }
-      /* Cyan shift */
       .glitch-img-container:hover::before {
-        background-image: url('https://github.com/ketve76/KBfoliopro/blob/main/profile.jpg?raw=true'); 
+        background-image: url('https://github.com/ketve76/KBfoliopro/blob/main/profile.jpg?raw=true');
         background-size: cover;
-        opacity: 0.8; /* Increased opacity */
+        opacity: 0.8;
         animation: glitch-anim-1 0.4s infinite linear alternate-reverse;
         transform: translate(-5px, 0);
         filter: drop-shadow(5px 0 0 #00f0ff);
       }
-      /* Purple shift */
       .glitch-img-container:hover::after {
         background-image: url('https://github.com/ketve76/KBfoliopro/blob/main/profile.jpg?raw=true');
         background-size: cover;
-        opacity: 0.8; /* Increased opacity */
+        opacity: 0.8;
         animation: glitch-anim-2 0.4s infinite linear alternate-reverse;
         transform: translate(5px, 0);
         filter: drop-shadow(-5px 0 0 #7000df);
@@ -162,21 +123,30 @@
         100% { clip-path: inset(40% 0 30% 0); }
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+    <script type="importmap">
+      {
+        "imports": {
+          "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+          "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+          "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+          "react/": "https://esm.sh/react@^19.2.3/",
+          "react": "https://esm.sh/react@^19.2.3"
+        }
+      }
+    </script>
+  </head>
   <body>
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+
+    <!-- Static form for Netlify Forms detection at build time -->
+    <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="subject" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>

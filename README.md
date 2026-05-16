@@ -1,72 +1,78 @@
 # Portfolio - Kevin Brunez 🚀
 
-> **Data Analyst | Conseiller Numérique | Expert Crypto & IA**
+> **Data Analyst · Conseiller Numérique · Expert IA & Web3**
 
-Bienvenue sur le code source de mon portfolio professionnel. Ce projet est une vitrine ultra-moderne conçue pour démontrer une expertise technique hybride : **Stratégie Business + Tech Avancée (IA/Blockchain)**.
+Code source du portfolio professionnel de Kevin Brunez : démonstration d'une expertise hybride **Stratégie Business + Tech Avancée (IA / Blockchain)**.
 
-![Aperçu](https://via.placeholder.com/1200x600?text=Portfolio+Kevin+Brunez+Preview)
+## 🌟 Fonctionnalités
 
-## 🌟 Fonctionnalités Clés
+- **Design cyberpunk / glassmorphism** — animations fluides, effets glitch.
+- **Assistant IA (Nexus AI)** — chatbot Gemini, **clé API jamais exposée au navigateur** (Netlify Function `/api/chat`).
+- **Rate-limit côté serveur** — 10 messages / 24h par IP, infalsifiable.
+- **Formulaire de contact fonctionnel** — branché sur Netlify Forms + honeypot anti-spam.
+- **Conformité Loi 25 (Québec) / RGPD (UE)** — politique de confidentialité, mentions légales, bandeau consentement, consent gate avant l'envoi de messages à Google Gemini.
+- **Polices privacy-friendly** — Bunny Fonts (UE, sans tracking) au lieu de Google Fonts.
+- **Headers de sécurité** — CSP, HSTS, X-Frame-Options, Permissions-Policy.
 
--   **Design Cyberpunk / Tech** : Interface sombre, néons, animations fluides et effets de verre (Glassmorphism).
--   **Assistant IA Intégré (Gemini)** : Un chatbot personnalisé ("Nexus AI") capable de répondre aux questions sur mon parcours, mes compétences et mes projets en temps réel.
--   **Section Projets Interactive** : Présentation détaillée des réalisations (Bots de trading, Dashboards BI, Apps Web3).
--   **Timeline de Parcours** : Visualisation de l'expérience professionnelle et académique.
+## 🛠 Stack technique
 
-## 🛠 Stack Technique
+- **Frontend** : React 19, TypeScript, Vite 6.
+- **Styling** : Tailwind CSS (via CDN).
+- **Icons** : Lucide React.
+- **IA** : Google Gemini API (`gemini-2.5-flash`) via Netlify Function.
+- **Hébergement** : Netlify (recommandé) — `netlify.toml` inclus.
 
-Ce portfolio est construit avec les technologies les plus performantes du moment pour assurer rapidité, SEO et maintenabilité.
+## 🚀 Démarrage local
 
--   **Frontend** : React 18, TypeScript, Vite.
--   **Styling** : Tailwind CSS (Animations personnalisées, dégradés).
--   **Icons** : Lucide React.
--   **Intelligence Artificielle** : Google Gemini API (via `@google/genai`).
--   **Déploiement** : Compatible Vercel / Netlify.
+```bash
+git clone https://github.com/ketve76/KBfoliopro.git
+cd KBfoliopro
+npm install
 
-## 🚀 Installation & Démarrage
+# 1. Copier .env.example en .env et y mettre votre clé Gemini
+cp .env.example .env
 
-Pour lancer le projet localement :
+# 2. Lancer en local AVEC les fonctions Netlify (chat IA fonctionnel)
+npm run dev       # nécessite netlify-cli : npm i -g netlify-cli
 
-1.  **Cloner le dépôt** :
-    ```bash
-    git clone https://github.com/ketve76/KBfolio.git
-    cd KBfolio
-    ```
+# OU sans les fonctions (chat IA non fonctionnel) :
+npm run dev:vite
+```
 
-2.  **Installer les dépendances** :
-    ```bash
-    npm install
-    # ou
-    yarn install
-    ```
+## 🔐 Variables d'environnement
 
-3.  **Configurer l'environnement** :
-    Créez un fichier `.env` à la racine et ajoutez votre clé API Gemini :
-    ```env
-    API_KEY=votre_cle_api_google_gemini
-    ```
+| Variable | Portée | Description |
+|---|---|---|
+| `GEMINI_API_KEY` | **Serveur uniquement** | Clé API Google Gemini. À configurer dans Netlify → Site settings → Environment variables. |
 
-4.  **Lancer le serveur de développement** :
-    ```bash
-    npm run dev
-    ```
+> ⚠️ La clé n'est **jamais** injectée dans le bundle client (cf. `vite.config.ts`).
 
-## 📂 Structure du Projet
+## 📂 Structure
 
 ```
 /
-├── components/       # Composants React (Hero, Navbar, Projects, Chat...)
-├── services/         # Logique métier et appels API (Gemini Service)
-├── types/            # Définitions TypeScript
-├── App.tsx           # Point d'entrée principal
-└── index.html        # HTML racine + Config Tailwind
+├── netlify/
+│   └── functions/
+│       └── chat.ts          # Endpoint Gemini sécurisé (/api/chat)
+├── components/              # React components
+├── services/
+│   └── geminiService.ts     # Wrapper fetch → /api/chat (zéro clé côté client)
+├── App.tsx
+├── index.html
+├── netlify.toml             # Build config + headers sécurité
+└── vite.config.ts
 ```
+
+## 📜 Aspects juridiques
+
+Ce portfolio respecte :
+- **Loi 25 (Québec)** — protection des renseignements personnels.
+- **RGPD (UE)** — droits d'accès, rectification, suppression, portabilité.
+- **LPRPDE (Canada fédéral)** — consentement et information.
+
+Les modaux « Mentions légales » et « Politique de confidentialité » sont accessibles depuis le footer.
 
 ## 👤 Auteur
 
-**Kevin Brunez**
--   *Coordonnateur Données & BI @ OIQ*
--   *Expert Web3 & Automation*
-
----
-*Ce projet est une démonstration de compétences en développement Frontend moderne et en intégration d'IA.*
+**Kevin Brunez** — Coordonnateur Données & BI @ OIQ · Montréal, Québec.
+LinkedIn : <https://www.linkedin.com/in/kevin-brunez-434121263/>
