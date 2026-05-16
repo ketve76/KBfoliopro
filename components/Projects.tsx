@@ -27,36 +27,46 @@ const myProjects: Project[] = [
   },
   {
     id: 2,
-    title: "CommunityPulse",
-    category: "Web & Community",
-    description: "Plateforme communautaire de partage de bons plans type Dealabs. Système de vote et réputation.",
-    tech: ["Next.js", "Firebase", "Tailwind", "Node.js"],
-    image: "COMING_SOON", // Placeholder flag
-    images: [], 
-    link: "#",
-    featured: false,
+    title: "Canadeals.ca",
+    category: "Community & Deals",
+    description: "Plateforme communautaire 100% canadienne de partage de bons plans. Les utilisateurs postent, votent et commentent les meilleures offres du moment — des grands magasins (Walmart, Hudson's Bay) aux deals plus confidentiels.",
+    tech: ["React", "TypeScript", "Tailwind", "Netlify"],
+    image: "/canadeals-home.png",
+    images: [
+        "/canadeals-home.png",
+        "/canadeals-detail.png"
+    ],
+    link: "https://canadeals.netlify.app",
+    featured: true,
     features: [
-        "Système de vote chaud/froid avec algorithme de tendance.",
-        "Niveaux d'utilisateurs et badges de réputation gamifiés.",
-        "Notifications push temps réel pour les alertes mots-clés.",
-        "Interface responsive optimisée Mobile-First."
+        "Feed communautaire avec filtres : New, Hot, Trending, For You.",
+        "Système de vote chaud/froid + commentaires pour faire émerger les meilleurs deals.",
+        "Pages produit détaillées avec lien direct vers le marchand et bouton 'Get Deal'.",
+        "Sidebar des marchands populaires (Walmart, Hudson's Bay, Amazon...) et des deals top du jour."
     ]
   },
   {
     id: 3,
-    title: "OmniFinance AI",
-    category: "Finance & AI",
-    description: "Application ultime de tracking financier personnel. Stocks, Cash, Flux, Dépenses alimenté par l'IA.",
-    tech: ["React Native", "FastAPI", "OpenAI API", "Plaid"],
-    image: "COMING_SOON", // Placeholder flag
-    images: [],
-    link: "#",
+    title: "WorthPilot",
+    category: "Personal Finance & AI",
+    description: "Cockpit financier personnel complet : comptes, transactions, portefeuilles boursier & crypto, budgets, objectifs d'épargne et conseiller IA Gemini intégré. SaaS multi-devises avec abonnements Free / Pro / Premium.",
+    tech: ["React", "TypeScript", "Tailwind", "Gemini API", "Stripe"],
+    image: "/worthpilot-dashboard.png",
+    images: [
+        "/worthpilot-dashboard.png",
+        "/worthpilot-stocks.png",
+        "/worthpilot-ai.png",
+        "/worthpilot-calendar.png",
+        "/worthpilot-pricing.png"
+    ],
+    link: "https://worthpilot.netlify.app",
     featured: true,
     features: [
-        "Synchronisation bancaire automatique (Flux & Soldes).",
-        "Tracking de portefeuille boursier et crypto multi-exchange.",
-        "Coach IA : Analyse des habitudes de dépenses et conseils d'épargne.",
-        "Prédiction de cash-flow sur 30 jours."
+        "Dashboard valeur nette : actifs, liquidités, dettes, revenus mensuels — données temps réel.",
+        "Portefeuilles actions & crypto avec graphiques 1H→5Y, watchlist et heures de marché live.",
+        "Conseiller IA (Gemini) : score de santé financière 0-100, analyses budgétaires, conseils d'épargne et d'investissement.",
+        "Calendrier financier avec transactions récurrentes, prévisions de cash-flow et alertes.",
+        "Modèle SaaS multi-niveaux : Free / Pro CA$10.99 / Premium CA$24.99 — paiements Stripe."
     ]
   }
 ];
