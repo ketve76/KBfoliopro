@@ -27,23 +27,28 @@ FULL PROFESSIONAL HISTORY:
 3. **PREVIOUS: Technicien Indicateurs & Amélioration Continue @ OIQ** — Oct 2019 - June 2025 (~5.5 years).
    Pivot from operations to data. Deployed BI across the organization (Power BI Expert), automated workflows (Power Automate), integrated AI into business processes, owned annual & government reports.
 
-4. **Chargé de Projets RH & Stratégie @ Pôle Emploi - Direction Régionale (France)** — 2018-2019.
-   Strategic recruitment campaigns for North-West region, GPEC tooling, regional training plans aligned with regional direction's objectives.
+4. **Chargé de Développement Professionnel & Recrutement @ Pôle Emploi - Direction RH Nord-Ouest** (Rouen, France) — June 2018 - Jan 2019.
+   Direction RH régionale Nord-Ouest. End-to-end recruitment (sourcing, présélection, entretiens téléphoniques), professional development management, apprenticeship campaign 2019. Excel TCD/dashboards for regional HR reporting.
 
-5. **Assistant Manager @ Steve's Winestore (Perth, Australia)** — 2017.
-   Full immersion year. Started as barman, promoted to Assistant Manager. Fluent English, hospitality management.
+5. **PVT Australie — Pause professionnelle (Working Holiday Visa)** — March 2017 - Feb 2018.
+   Full immersion year in Western Australia. Multiple hospitality roles: barman → cleaner → assistant manager → bar manager. Acquired professional English (Capacité professionnelle complète).
 
-6. **Analyste RH & Gestion de Crise (PSE) @ Faurecia** — 2015-2016.
-   HR analytics in industrial crisis context (Plan de Sauvegarde de l'Emploi during plant closure). Social relations, HSE, KPIs.
+6. **Généraliste RH — Pilotage PSE @ Faurecia Interior Systems** (Theillay, Centre-Val de Loire, France) — June 2015 - Nov 2016 (1.5 years).
+   Generalist HR mission in support of HR Director and Managers (CODIR participation). Key project: piloted a Plan de Sauvegarde de l'Emploi (PSE) during industrial crisis. HR Dashboard management (Excel TCD, social KPIs).
 
 EDUCATION:
 - Master Développement des RH — CESI (2015-2016).
 - Licence AES (Eco-Gestion) — Université du Havre (2011-2013).
 
-CERTIFICATIONS (be precise — these are Coursera Specializations, NOT exam-based credentials):
-- Meta React Developer Specialization (Coursera, 6+ months program) — 2025.
-- Microsoft Power BI Data Analyst Specialization (Coursera, 6+ months program) — 2024.
-- Note: he does NOT hold the PL-300 Microsoft exam certification. If asked about PL-300 specifically, clarify it's the Coursera Microsoft Specialization (still rigorous, 6+ months, capstone projects).
+CERTIFICATIONS (be precise — these are issuer-direct Professional Certificates, NOT exam-based credentials):
+- **Microsoft Power BI Data Analyst** Professional Certificate (Microsoft, 6+ months) — May 2025.
+- **Meta Front-End Developer** Professional Certificate (Meta, 6+ months) — June 2024.
+- Sub-modules: Data Modeling in Power BI (Microsoft, Aug 2024); Extract, Transform and Load Data in Power BI (Microsoft, June 2024).
+- Note: he does NOT hold the PL-300 Microsoft exam certification. If asked about PL-300 specifically, clarify it's the Microsoft Professional Certificate (rigorous 6+ month program with capstone projects).
+
+VEILLE & INFLUENCES:
+- Follows **Mila — Institut québécois d'intelligence artificielle** (signals serious AI engagement in Québec).
+- Active in Web3 communities and crypto/DeFi trading circles.
 
 SKILLS (be precise — do not overclaim):
 - **Strong:** Power BI (Expert, certified), SQL/DAX, ETL, Data Governance, BI strategy.

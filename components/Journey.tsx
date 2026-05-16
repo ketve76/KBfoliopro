@@ -48,44 +48,44 @@ const workExperiences: Experience[] = [
   },
   {
     id: 4,
-    role: "Chargé de Projets RH & Stratégie",
-    company: "Pôle Emploi - Direction Régionale (France)",
-    period: "2018 - 2019",
-    description: "Pilotage stratégique à la Direction Nord-Ouest. Gestion prévisionnelle des emplois et compétences (GPEC) et campagnes de recrutement d'envergure.",
-    skills: ["Stratégie RH", "GPEC", "Recrutement", "Reporting Direction"],
+    role: "Chargé de Développement Professionnel & Recrutement",
+    company: "Pôle Emploi - Direction RH Nord-Ouest (Rouen, France)",
+    period: "Juin 2018 - Janv. 2019",
+    description: "Direction RH régionale Nord-Ouest : pilotage du développement professionnel et des campagnes de recrutement (sourcing, présélection, entretiens).",
+    skills: ["Développement Pro", "Recrutement", "Présélection", "Reporting RH"],
     details: [
-        "Pilotage des campagnes de recrutement stratégiques pour la région Nord-Ouest.",
-        "Mise en place d'outils de suivi GPEC (Gestion Prévisionnelle des Emplois et Compétences).",
-        "Analyse des écarts de compétences et élaboration de plans de formation régionaux.",
-        "Collaboration directe avec la direction régionale pour les objectifs annuels."
+        "Recrutement bout-en-bout pour la Direction RH Nord-Ouest : sourcing, présélection, entretiens téléphoniques.",
+        "Pilotage du développement professionnel et gestion de la campagne apprentissage 2019.",
+        "Reporting RH avec dashboards Excel (TCD, tableaux de bord régionaux).",
+        "Collaboration directe avec la Direction RH régionale."
     ]
   },
   {
     id: 6,
-    role: "Assistant Manager (Expérience Internationale)",
-    company: "Steve's - Nedlands (Perth, Australie)",
-    period: "2017",
-    description: "Année d'immersion totale en Australie. Progression rapide de Barman à Assistant Manager dans un établissement de prestige (Winestore).",
-    skills: ["Anglais Fluent", "Management Ops", "Adaptabilité", "Vente"],
+    role: "PVT Australie — Année internationale",
+    company: "Pause professionnelle · Australie de l'Ouest",
+    period: "Mars 2017 - Fév. 2018 (1 an)",
+    description: "Programme Vacances Travail — immersion totale en anglais avec plusieurs rôles dans l'hospitality. Progression de barman jusqu'à bar manager.",
+    skills: ["Anglais Pro", "Adaptabilité", "Service Client", "Management Ops"],
     details: [
-        "Immersion complète à Perth pour perfectionner l'anglais (Niveau Fluent atteint).",
-        "Promotion rapide : Début comme Barman, fini Assistant Manager.",
-        "Gestion opérationnelle au Steve's, un Winestore & Bar réputé.",
+        "Programme Vacances Travail (PVT) en Australie de l'Ouest — 1 an d'immersion complète.",
+        "Plusieurs rôles dans l'hospitality : barman → cleaner → assistant manager → bar manager.",
+        "Acquisition de l'anglais professionnel (capacité professionnelle complète).",
         "Développement de l'adaptabilité interculturelle et du service client haut de gamme."
     ]
   },
   {
     id: 5,
-    role: "Analyste RH & Gestion de Crise (PSE)",
-    company: "Faurecia Interior Systems (Automotive)",
-    period: "2015 - 2016",
-    description: "Gestion RH opérationnelle dans un contexte industriel critique. Pilotage d'un Plan de Sauvegarde de l'Emploi (PSE) et indicateurs sociaux.",
-    skills: ["Gestion de Crise", "Droit Social", "Relations Sociales", "KPIs RH"],
+    role: "Généraliste RH — Pilotage PSE",
+    company: "Faurecia Interior Systems (Theillay, Centre-Val de Loire)",
+    period: "Juin 2015 - Nov. 2016 (1 an 6 mois)",
+    description: "Mission généraliste RH en support direct du Responsable RH, Directeur RH et Managers. Projet clé : pilotage d'un Plan de Sauvegarde de l'Emploi (PSE).",
+    skills: ["Gestion de Crise (PSE)", "CODIR", "Dashboard RH", "Relations Sociales"],
     details: [
-        "Gestion opérationnelle d'un Plan de Sauvegarde de l'Emploi (PSE) en contexte de fermeture.",
-        "Suivi des indicateurs sociaux et tableaux de bord RH pour la direction usine.",
-        "Gestion des relations sociales et du climat social en période de crise.",
-        "Pilotage des dossiers Santé, Sécurité et Environnement (HSE)."
+        "Support direct du Responsable RH, Directeur RH et Managers — participation aux réunions CODIR.",
+        "Projet clé : pilotage opérationnel d'un Plan de Sauvegarde de l'Emploi (PSE) en contexte industriel critique.",
+        "Gestion du Dashboard RH : tableaux de bord Excel, indicateurs sociaux, KPIs.",
+        "Diverses missions généralistes RH (recrutement, formation, climat social)."
     ]
   }
 ];
@@ -109,15 +109,27 @@ const educationData = [
 // --- DATA: CERTIFICATIONS ---
 const certificationsData = [
     {
-        title: "Meta React Developer Specialization",
-        issuer: "Meta · Coursera (6+ mois)",
-        date: "2025",
+        title: "Microsoft Power BI Data Analyst",
+        issuer: "Microsoft (Professional Certificate, 6+ mois)",
+        date: "Mai 2025",
+        icon: <Database className="text-yellow-500" size={20} />
+    },
+    {
+        title: "Meta Front-End Developer",
+        issuer: "Meta (Professional Certificate, 6+ mois)",
+        date: "Juin 2024",
         icon: <Code className="text-blue-400" size={20} />
     },
     {
-        title: "Microsoft Power BI Data Analyst",
-        issuer: "Microsoft · Coursera (6+ mois)",
-        date: "2024",
+        title: "Data Modeling in Power BI",
+        issuer: "Microsoft",
+        date: "Août 2024",
+        icon: <Database className="text-yellow-500" size={20} />
+    },
+    {
+        title: "ETL Data in Power BI",
+        issuer: "Microsoft",
+        date: "Juin 2024",
         icon: <Database className="text-yellow-500" size={20} />
     }
 ];
@@ -254,7 +266,7 @@ const Journey: React.FC = () => {
                         <div className="p-5 rounded-xl border border-dashed border-white/20 bg-transparent flex items-center justify-center text-center">
                             <div>
                                 <BookOpen className="w-6 h-6 text-gray-500 mx-auto mb-2" />
-                                <p className="text-gray-500 text-sm">Apprentissage continu : AI Agents, MCP custom, Tokenomics avancée...</p>
+                                <p className="text-gray-500 text-sm">Apprentissage continu : AI Agents, MCP custom, Tokenomics avancée.<br />Veille : <strong>Mila</strong> (Institut québécois d'IA), communautés Web3.</p>
                             </div>
                         </div>
                     </div>
