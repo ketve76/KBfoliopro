@@ -59,8 +59,9 @@ const myProjects: Project[] = [
         "/worthpilot-calendar.png",
         "/worthpilot-pricing.png"
     ],
-    link: "https://worthpilot.netlify.app",
+    link: "#",
     featured: true,
+    status: "private-beta",
     features: [
         "Dashboard valeur nette : actifs, liquidités, dettes, revenus mensuels — données temps réel.",
         "Portefeuilles actions & crypto avec graphiques 1H→5Y, watchlist et heures de marché live.",
@@ -145,11 +146,18 @@ const Projects: React.FC = () => {
                 <ProjectVisual image={project.image} title={project.title} isHovered={true} />
 
                 <div className="absolute top-4 right-4 z-20 bg-black/50 backdrop-blur rounded-full p-2 border border-white/10">
-                    {project.id === 1 ? <Activity className="text-cyber-primary w-5 h-5" /> : 
+                    {project.id === 1 ? <Activity className="text-cyber-primary w-5 h-5" /> :
                      project.id === 2 ? <ShoppingBag className="text-orange-500 w-5 h-5" /> :
                      <PieChart className="text-green-500 w-5 h-5" />}
                 </div>
-                
+
+                {/* Private Beta badge */}
+                {project.status === 'private-beta' && (
+                    <div className="absolute top-4 left-4 z-20 bg-yellow-500/95 text-black text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded flex items-center gap-1 shadow-lg">
+                        <Lock size={10} /> Private Beta
+                    </div>
+                )}
+
                 {/* Multi-image indicator */}
                 {project.images && project.images.length > 1 && (
                     <div className="absolute bottom-4 left-4 z-20 bg-black/60 backdrop-blur px-2 py-1 rounded-md text-xs text-white flex items-center gap-1 border border-white/10">
@@ -242,7 +250,7 @@ const Projects: React.FC = () => {
 
                 {/* Right Side: Content Section */}
                 <div className="w-full md:w-2/5 p-8 overflow-y-auto bg-[#0a0a0a]">
-                    <div className="flex items-center gap-2 mb-2">
+                    <div className="flex items-center gap-2 mb-2 flex-wrap">
                          <span className="px-3 py-1 bg-cyber-secondary/20 border border-cyber-secondary/50 rounded-full text-xs text-cyber-secondary font-bold uppercase tracking-wider">
                             {selectedProject.category}
                          </span>
@@ -251,10 +259,22 @@ const Projects: React.FC = () => {
                                 <Sparkles size={10} /> Featured
                              </span>
                          )}
+                         {selectedProject.status === 'private-beta' && (
+                             <span className="px-3 py-1 bg-yellow-500/95 text-black rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1">
+                                <Lock size={10} /> Private Beta
+                             </span>
+                         )}
                     </div>
-                    
+
                     <h3 className="text-3xl font-bold text-white mb-4 leading-tight">{selectedProject.title}</h3>
-                    
+
+                    {selectedProject.status === 'private-beta' && (
+                        <div className="mb-4 p-3 bg-yellow-500/10 border border-yellow-500/30 rounded-lg text-xs text-yellow-200 leading-relaxed">
+                            <strong className="block mb-1">🔒 En beta privée</strong>
+                            Ce projet est actuellement en phase de test avec un cercle restreint. Démo accessible sur demande — utilise le formulaire de contact.
+                        </div>
+                    )}
+
                     <p className="text-gray-300 leading-relaxed mb-6 text-sm">
                         {selectedProject.description}
                     </p>
@@ -288,16 +308,19 @@ const Projects: React.FC = () => {
                         </div>
 
                         <div className="pt-6 flex gap-4 border-t border-white/10">
-                            <a href={selectedProject.link} className="flex-1 py-3 bg-cyber-primary text-black font-bold rounded-lg hover:bg-cyan-400 transition-colors flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,240,255,0.3)]">
-                                <ExternalLink size={18} /> Voir le projet
-                            </a>
-                            <a href={selectedProject.link} className="px-4 py-3 border border-white/20 rounded-lg hover:bg-white/5 transition-colors text-white">
-                                <Github size={20} />
-                            </a>
-                        </div>
-                        
-                        <div className="text-xs text-gray-500 text-center font-mono mt-2">
-                            * Projet en développement (Beta)
+                            {selectedProject.status === 'private-beta' || selectedProject.link === '#' ? (
+                                <a
+                                    href="#contact"
+                                    onClick={(e) => { e.preventDefault(); closeProject(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
+                                    className="flex-1 py-3 bg-yellow-500/20 border border-yellow-500/50 text-yellow-300 font-bold rounded-lg hover:bg-yellow-500/30 transition-colors flex items-center justify-center gap-2"
+                                >
+                                    <Lock size={18} /> Demo sur demande
+                                </a>
+                            ) : (
+                                <a href={selectedProject.link} target="_blank" rel="noreferrer noopener" className="flex-1 py-3 bg-cyber-primary text-black font-bold rounded-lg hover:bg-cyan-400 transition-colors flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,240,255,0.3)]">
+                                    <ExternalLink size={18} /> Voir le projet
+                                </a>
+                            )}
                         </div>
                     </div>
                 </div>
