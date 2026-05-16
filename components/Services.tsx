@@ -5,20 +5,20 @@ const services = [
   {
     icon: <BarChart3 className="w-8 h-8 text-cyber-primary" />,
     title: "Business Intelligence",
-    description: "Transformation de données brutes en leviers décisionnels. Conception de tableaux de bord Power BI interactifs, modélisation de données (DAX/SQL) et storytelling.",
-    tags: ["Power BI", "ETL", "SQL", "Data Viz"]
+    description: "Power BI Expert (PL-300). Transformation de données brutes en leviers décisionnels — tableaux de bord interactifs, modélisation DAX/SQL et storytelling auprès des directions.",
+    tags: ["Power BI", "DAX", "SQL", "ETL", "Data Viz"]
   },
   {
     icon: <Bot className="w-8 h-8 text-purple-500" />,
-    title: "Automatisation & IA",
-    description: "Optimisation des processus métiers par l'automatisation (n8n, Power Automate) et déploiement d'agents IA pour réduire les tâches répétitives.",
-    tags: ["n8n", "Python", "LLMs", "RPA"]
+    title: "Orchestration IA & Agents",
+    description: "Architecture multi-LLM : routage des tâches entre Claude (Haiku→Opus), Gemini et modèles locaux (Gemma 4, Qwen via LM Studio) pour optimiser coût/qualité/latence. Agents autonomes, MCP servers, automatisation.",
+    tags: ["Claude SDK", "Gemini", "LLMs locaux", "Agents", "MCP", "n8n"]
   },
   {
     icon: <Blocks className="w-8 h-8 text-blue-500" />,
-    title: "Stratégie Web3 & DeFi",
-    description: "Accompagnement sur les marchés décentralisés. Analyse de tokenomics, audit de sécurité (Smart Contracts) et développement d'outils de trading algorithmique.",
-    tags: ["Solidity", "DeFi", "Trading Bots", "Audit"]
+    title: "Web3 & DeFi Analytics",
+    description: "Analyse de tokenomics, monitoring on-chain et développement de bots de trading algorithmiques. Lecture critique de smart contracts et de mécaniques DeFi avant exposition capital.",
+    tags: ["DeFi", "Tokenomics", "On-chain", "Trading Bots", "Python"]
   }
 ];
 

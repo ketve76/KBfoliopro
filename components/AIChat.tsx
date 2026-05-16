@@ -139,7 +139,7 @@ const AIChat: React.FC = () => {
                   <div className="flex justify-start">
                     <div className="bg-[#1a1a1a] p-3 rounded-2xl rounded-bl-none border border-white/5 flex items-center gap-2">
                       <Loader2 className="w-4 h-4 animate-spin text-cyber-primary" />
-                      <span className="text-xs text-gray-400">Computing response...</span>
+                      <span className="text-xs text-gray-400">Réflexion en cours...</span>
                     </div>
                   </div>
                 )}

@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
         <div className="space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm hover:border-cyber-primary/50 transition-colors duration-300">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-            <span className="text-xs font-mono text-gray-300">BASÉ À MONTRÉAL • COORDONNATEUR DONNÉES & BI</span>
+            <span className="text-xs font-mono text-gray-300">MONTRÉAL · BILINGUE FR/EN · COORDO DONNÉES & BI @ OIQ</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">
@@ -55,16 +55,16 @@ const Hero: React.FC = () => {
           
           <div className="space-y-6 text-gray-400 text-lg leading-relaxed border-l-2 border-cyber-primary/30 pl-6 backdrop-blur-sm bg-black/20 p-4 rounded-r-xl">
             <p>
-              Coordonnateur Données (OIQ) le jour, Développeur autonome la nuit. 
-              Je transforme les processus complexes en systèmes performants grâce à <strong>l'IA</strong> (Agents, n8n), la <strong>Data Intelligence</strong> (Power BI Expert) et la <strong>Blockchain</strong>.
-            </p>
-            
-            <p>
-              Mais derrière le profil "Geek" se cache un <strong>stratège passionné et curieux</strong>. Fort d'une expérience en direction stratégique, je possède une expertise pointue en <strong>Finance Classique & Décentralisée (DeFi)</strong>. Je comprends les marchés boursiers, les liquidités et les mécanismes économiques profonds.
+              Coordonnateur Données (OIQ) le jour, builder autonome la nuit.
+              Je transforme les processus complexes en systèmes performants grâce à <strong>l'orchestration multi-LLM</strong> (Claude, Gemini + modèles locaux Gemma 4 / Qwen), la <strong>Data Intelligence</strong> (Power BI Expert PL-300) et la <strong>finance décentralisée</strong>.
             </p>
 
             <p>
-               En <strong>veille technologique et économique constante</strong>, je ne me contente pas de coder : j'analyse, j'anticipe et je conçois des outils (Trading Bots, Dashboard Financiers) qui ont un temps d'avance sur le marché.
+              <strong>Profil hybride RH stratégique → Data → IA.</strong> Ancien analyste RH en gestion de crise (PSE Faurecia) et chargé de projets à la Direction Régionale de Pôle Emploi, je sais parler aux ingénieurs comme aux comités de direction. C'est ce pont entre tech et stratégie qui fait livrer des projets data au lieu de produire des dashboards qui finissent sur une étagère.
+            </p>
+
+            <p>
+              Au quotidien j'<strong>orchestre des agents IA</strong> en optimisant la répartition cloud/local selon coût/qualité/latence. En <strong>veille techno & éco permanente</strong>, je conçois aussi des outils financiers (trading bots, dashboards crypto) avec un temps d'avance sur le marché.
             </p>
           </div>
 
