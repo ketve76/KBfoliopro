@@ -10,7 +10,7 @@ const LegalNotice: React.FC<Props> = ({ open, onClose }) => (
       Kevin Brunez<br />
       Particulier (non commerçant)<br />
       Montréal, Québec, Canada<br />
-      Email : <a href="mailto:contact@kevinbrunez.dev" className="text-cyber-primary">contact@kevinbrunez.dev</a>
+      Email : <a href="mailto:brunezkevin@gmail.com" className="text-cyber-primary">brunezkevin@gmail.com</a>
     </p>
 
     <h3 className="text-lg font-bold text-white mt-4">Directeur de la publication</h3>

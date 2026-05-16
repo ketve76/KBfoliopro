@@ -10,7 +10,7 @@ const PrivacyPolicy: React.FC<Props> = ({ open, onClose }) => (
     <h3 className="text-lg font-bold text-white mt-4">1. Responsable du traitement</h3>
     <p>
       Kevin Brunez, particulier, résidant à Montréal (Québec, Canada).
-      Contact : <a href="mailto:contact@kevinbrunez.dev" className="text-cyber-primary">contact@kevinbrunez.dev</a>.
+      Contact : <a href="mailto:brunezkevin@gmail.com" className="text-cyber-primary">brunezkevin@gmail.com</a>.
     </p>
 
     <h3 className="text-lg font-bold text-white mt-4">2. Données collectées</h3>
@@ -59,7 +59,7 @@ const PrivacyPolicy: React.FC<Props> = ({ open, onClose }) => (
       <li>Droit de retirer votre consentement à tout moment.</li>
       <li>Droit d'introduire une plainte auprès de la <a href="https://www.cai.gouv.qc.ca/" target="_blank" rel="noreferrer" className="text-cyber-primary">Commission d'accès à l'information du Québec</a> ou de votre autorité nationale (CNIL en France).</li>
     </ul>
-    <p>Pour exercer ces droits : <a href="mailto:contact@kevinbrunez.dev" className="text-cyber-primary">contact@kevinbrunez.dev</a>.</p>
+    <p>Pour exercer ces droits : <a href="mailto:brunezkevin@gmail.com" className="text-cyber-primary">brunezkevin@gmail.com</a>.</p>
 
     <h3 className="text-lg font-bold text-white mt-4">7. Sécurité</h3>
     <p>

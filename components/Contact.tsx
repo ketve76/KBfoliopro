@@ -60,13 +60,13 @@ const Contact: React.FC = () => {
             </p>
 
             <div className="space-y-6">
-              <a href="mailto:contact@kevinbrunez.dev" className="flex items-center gap-4 group">
+              <a href="mailto:brunezkevin@gmail.com" className="flex items-center gap-4 group">
                 <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-cyber-primary group-hover:text-black transition-colors duration-300">
                   <Mail size={20} />
                 </div>
                 <div>
                   <h4 className="font-bold text-white">Email</h4>
-                  <p className="text-gray-400 text-sm">contact@kevinbrunez.dev</p>
+                  <p className="text-gray-400 text-sm">brunezkevin@gmail.com</p>
                 </div>
               </a>
 
@@ -153,7 +153,7 @@ const Contact: React.FC = () => {
               {formStatus === 'error' && (
                 <div className="flex items-center gap-2 text-red-400 text-xs">
                   <AlertCircle size={14} />
-                  <span>{form.consent ? "Erreur d'envoi. Réessayez plus tard ou écrivez à contact@kevinbrunez.dev." : "Veuillez accepter la politique de confidentialité."}</span>
+                  <span>{form.consent ? "Erreur d'envoi. Réessayez plus tard ou écrivez à brunezkevin@gmail.com." : "Veuillez accepter la politique de confidentialité."}</span>
                 </div>
               )}
 
