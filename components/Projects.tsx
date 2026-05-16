@@ -9,12 +9,12 @@ const myProjects: Project[] = [
     category: "AI & Trading Tool",
     description: "Outil complet d'analyse de marché global et crypto développé en React TypeScript. L'IA analyse les métriques pour proposer des trades sur contrats perpétuels et spot.",
     tech: ["React", "TypeScript", "Python (AI)", "Machine Learning"],
-    image: "/globalanalysis.PNG",
+    image: "/global-analysis.png",
     images: [
-        "/globalanalysis.PNG",
-        "/TokkenAnalysis1.PNG",
-        "/TokkenAnalysis2.PNG",
-        "/TokkenAnalysis3.PNG"
+        "/global-analysis.png",
+        "/token-analysis-1.png",
+        "/token-analysis-2.png",
+        "/token-analysis-3.png"
     ],
     link: "#",
     featured: true,

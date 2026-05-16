@@ -10,7 +10,7 @@ const workExperiences: Experience[] = [
     company: "OIQ - Direction Générale (Bureau de la performance org.)",
     period: "Juin 2025 - Présent",
     description: "Position stratégique rattachée à la Direction Générale. Je pilote la valorisation des données et la culture BI pour l'ensemble de l'organisation.",
-    skills: ["Gouvernance de Données", "Stratégie BI", "Power Platform", "Direction Générale"],
+    skills: ["Gouvernance de Données", "Stratégie BI", "Power BI", "Direction Générale"],
     details: [
         "Membre du Bureau de la performance organisationnelle (Rattaché à la DG).",
         "Coordonner la collecte et la qualité des données pour les indicateurs stratégiques.",
@@ -20,16 +20,16 @@ const workExperiences: Experience[] = [
   },
   {
     id: 2,
-    role: "Architecte Web3 & AI (Freelance)",
-    company: "Projets Personnels & Consulting",
+    role: "Builder & AI Engineer (Freelance)",
+    company: "Projets Personnels (Canadeals, WorthPilot, Crypto Signal)",
     period: "2023 - Présent",
-    description: "Création de solutions avant-gardistes : Bots de trading Crypto alimentés par IA, audit de Smart Contracts et développement d'apps React.",
-    skills: ["React/TypeScript", "Solidity", "Python (AI)", "n8n"],
+    description: "Architecture multi-LLM, agents autonomes et apps SaaS. Optimisation coût/qualité par routage entre modèles cloud (Claude, Gemini) et locaux (Gemma 4, Qwen).",
+    skills: ["React/TypeScript", "Orchestration LLM", "Agents IA", "Python", "MCP"],
     details: [
-        "Développement de bots de trading algorithmique (Python/AI).",
-        "Création d'architectures Web3 sécurisées (Smart Contracts).",
-        "Automatisation de workflows complexes avec n8n et Agents IA.",
-        "Veille technologique active sur la DeFi et les LLMs."
+        "Apps SaaS en production : Canadeals (plateforme communautaire) et WorthPilot (finance perso avec conseiller IA Gemini).",
+        "Bots de trading algorithmique (Python) + analyse on-chain et tokenomics.",
+        "Orchestration multi-LLM : routage des tâches entre Claude Haiku/Sonnet/Opus, Gemini et modèles open-source locaux selon coût/latence.",
+        "Construction d'agents autonomes et de MCP servers pour Claude Code."
     ]
   },
   {
@@ -37,12 +37,12 @@ const workExperiences: Experience[] = [
     role: "Technicien Indicateurs & Amélioration Continue",
     company: "Ordre des ingénieurs du Québec (OIQ)",
     period: "Oct 2019 - Juin 2025",
-    description: "Le pivot technique. Déploiement de l'intelligence d'affaires et intégration de l'IA dans les processus opérationnels.",
-    skills: ["Power Automate", "Intégration IA", "DAX", "SharePoint"],
+    description: "Le pivot technique : passage du RH vers la Data. Déploiement de l'intelligence d'affaires et intégration de l'IA dans les processus opérationnels.",
+    skills: ["Power BI", "Power Automate", "DAX", "SharePoint", "Intégration IA"],
     details: [
-        "Déploiement de l'intelligence d'affaires (BI) au sein de l'Ordre.",
+        "Déploiement de l'intelligence d'affaires (BI) au sein de l'Ordre — modèles, dashboards, gouvernance.",
         "Responsable des rapports annuels, gouvernementaux et internes.",
-        "Intégration de l'IA et automatisation via Power Automate & Power Apps.",
+        "Automatisation de workflows via Power Automate et intégration de l'IA dans les processus.",
         "Expert de contenu sur les projets technologiques transverses."
     ]
   },
