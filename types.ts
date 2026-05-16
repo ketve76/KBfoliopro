@@ -9,6 +9,7 @@ export interface Project {
   link: string;
   featured: boolean;
   features?: string[]; // New field for detailed modal
+  status?: 'live' | 'private-beta' | 'concept'; // Visibility/maturity. Undefined = 'live'.
 }
 
 export interface Experience {
